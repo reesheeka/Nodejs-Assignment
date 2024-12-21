@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "ff5ad88c-a433-4d2d-810c-617b7f13aae4",
+		"name": "Nodejs-Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28739011"
+	},
+	"item": [
+		{
+			"name": "register-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "file",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Rishika Singh\",\r\n    \"email\": \"rishika@gmail.com\",\r\n    \"password\": \"Rishika@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rishika@gmail.com\",\r\n    \"password\": \"Rishika@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view-profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/users/6766648b9b9464f3508e5716",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"6766648b9b9464f3508e5716"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Category2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/categories/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"categories",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/categories/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"categories",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert-bulk-questions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/HP/OneDrive/Documents/questions.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/questions/bulk-insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"questions",
+						"bulk-insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-questions-by-category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/questions/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"questions",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"6766648b9b9464f3508e5716\",\r\n    \"questionId\": \"6766910618a5a030002eb17b\",\r\n    \"answer\": \"Nodejs is javascript run time environment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/answers/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"answers",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-users-answer",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "edit-profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "rishika@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"type": "file",
+							"src": "/E:/Photos/Photo/.IMG_20240113_142537.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
